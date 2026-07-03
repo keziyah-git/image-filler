@@ -51,18 +51,17 @@ if uploaded_file is not None:
     with col2:
         st.markdown(f"### ✨ {selected_filter} Result")
         st.image(processed_image, use_container_width=True)
-        
-    # 6. Download Button for the newly filtered image output file
-    # We must save the processed image payload temporarily to let the user download it
-    temp_save_path = "output_filtered.png"
-    processed_image.save(temp_save_path)
-    
-    with open(temp_save_path, "rb") as file:
-        st.download_button(
+
             label="📥 Download Filtered Image",
             data=file,
             file_name="filtered_photo.png",
             mime="image/png"
         )
 else:
-    st.info("💡 Standby: Please upload a photo file from your device to activate the image canvas filters.")
+    st.info("💡 Standby: Please upload a photo fi        
+    # 6. Download Button for the newly filtered image output file
+    # We must save the processed image payload temporarily to let the user download it
+    temp_save_path = "output_filtered.png"
+    processed_image.save(temp_save_path)
+    
+    with open(temp_save_path, "rb") as file:
